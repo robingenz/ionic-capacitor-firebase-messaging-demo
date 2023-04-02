@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyCiYg3QSDBoxw1WcZyOqJvOD15jKiVIDBU",
+    authDomain: "capacitor-messaging-demo.firebaseapp.com",
+    projectId: "capacitor-messaging-demo",
+    storageBucket: "capacitor-messaging-demo.appspot.com",
+    messagingSenderId: "153571302575",
+    appId: "1:153571302575:web:3dec9634598de1bff0885a"
+  },
 };
 
 /*
