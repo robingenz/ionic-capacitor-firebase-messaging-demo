@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "153571302575",
+    "project_id": "capacitor-messaging-demo",
+    "storage_bucket": "capacitor-messaging-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153571302575:android:6847e743db0d3c3df0885a",
+        "android_client_info": {
+          "package_name": "dev.robingenz.capacitorjs.demo.firebasemessaging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "153571302575-usuaccv046md9qohps5q05gav6qeq3d1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC58K6LpiwrTel360Nebz1yd3VtCdzBQic"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "153571302575-usuaccv046md9qohps5q05gav6qeq3d1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
