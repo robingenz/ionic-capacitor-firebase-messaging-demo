@@ -1,0 +1,7 @@
+{
+  "name": "capacitor-firebase-messaging-demo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
