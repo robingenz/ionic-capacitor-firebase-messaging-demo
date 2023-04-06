@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FirebaseMessaging } from '@capacitor-firebase/messaging';
+import { FirebaseMessaging, GetTokenOptions } from '@capacitor-firebase/messaging';
 import { Capacitor } from '@capacitor/core';
 import { IonicModule } from '@ionic/angular';
 import { environment } from 'src/environments/environment';
@@ -21,8 +21,7 @@ export class HomePage {
     FirebaseMessaging.addListener('notificationActionPerformed', (event) => {
       console.log('notificationActionPerformed: ', { event });
     });
-
-    if (!Capacitor.isNativePlatform()) {
+    if (Capacitor.getPlatform() === 'web') {
       navigator.serviceWorker.addEventListener('message', (event: any) => {
         console.log('serviceWorker message: ', { event });
       });
@@ -34,9 +33,13 @@ export class HomePage {
   }
 
   public async getToken(): Promise<void> {
-    const { token } = await FirebaseMessaging.getToken({
-      vapidKey: environment.firebase.vapidKey,
-    });
+    const options: GetTokenOptions = {
+      vapidKey: environment.firebase.vapidKey
+    }
+    if (Capacitor.getPlatform() === 'web') {
+      options.serviceWorkerRegistration = await navigator.serviceWorker.register('firebase-messaging-sw.js');
+    }
+    const { token } = await FirebaseMessaging.getToken(options);
     this.token = token;
   }
 }
